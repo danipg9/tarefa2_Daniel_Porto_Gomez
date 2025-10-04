@@ -2,12 +2,10 @@ from faker import Faker
 import random
 
 
-if __name__ == '__main__':
-    main()
-
-
 def main():
     usuarios = crear_usuarios()
+    mostrar_usuarios(usuarios)
+
 
 # Función para crear usuarios
 def crear_usuarios(n=15, locale='es_ES'):
@@ -22,3 +20,17 @@ def crear_usuarios(n=15, locale='es_ES'):
         }
     return usuarios
 
+
+# Función para crear usuarios
+def mostrar_usuarios(usuarios):
+    for codigo, datos in usuarios.items():
+        print(f"ID {codigo}:")
+        print(f"  Nome: {datos['nome']}")
+        print(f"  Dirección: {datos['direccion']}")
+        print(f"  Correo electrónico: {datos['correo']}")
+        print(f"  Teléfono: {datos['telefono']}")
+        print()
+
+
+if __name__ == '__main__':
+    main()
