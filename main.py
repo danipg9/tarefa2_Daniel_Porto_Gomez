@@ -5,6 +5,9 @@ import random
 def main():
     usuarios = crear_usuarios()
     mostrar_usuarios(usuarios)
+    afortunado_id = random.choice(list(usuarios.keys()))
+    nome_afortunado = usuarios[afortunado_id]['nome']
+    print(f"O usuario chamado {nome_afortunado} foi o afortunado!")
 
 
 # Función para crear usuarios
